@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conditioner_frament"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <Switch
-        android:id="@+id/LockState"
-        android:layout_width="156dp"
-        android:layout_height="52dp"
-        android:text="Lock"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="403dp" />
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/art_space"/>
+
+    <LinearLayout
+        android:layout_width="@dimen/control_item_center"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/desc_item"
+                android:layout_height="match_parent"
+                android:text="Lock"
+                android:textColor="@color/colorText" />
+
+            <Switch
+                android:id="@+id/lockState"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/desc_item"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Oil Bag"
+                android:textColor="@color/colorText" />
+
+            <Button
+                android:id="@+id/oilBagBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/desc_item"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Baggage"
+                android:textColor="@color/colorText" />
+
+            <Button
+                android:id="@+id/baggageBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

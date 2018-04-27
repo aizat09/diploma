@@ -32,10 +32,16 @@ public class ConditionerFragment extends Fragment {
         condStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    showToast("Conditioner is on.");
-                }else{
-                    showToast("Conditioner is off.");
+                try {
+                    if(b){
+                        showToast("Conditioner is on.");
+                        BluetoothActivity.outputStream.write("C".getBytes());
+                    }else{
+                        showToast("Conditioner is off.");
+                        BluetoothActivity.outputStream.write("c".getBytes());
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
                 }
             }
         });

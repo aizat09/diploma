@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conditioner_frament"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/art_space"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +23,8 @@
             <TextView
                 android:layout_width="@dimen/desc_item"
                 android:layout_height="match_parent"
-                android:text="Headlamps"/>
+                android:text="Headlamps"
+                android:textColor="@color/colorText"/>
             <ToggleButton
                 android:id="@+id/HeadLampStateToggle"
                 android:layout_width="wrap_content"
@@ -33,7 +39,8 @@
             <TextView
                 android:layout_width="@dimen/desc_item"
                 android:layout_height="match_parent"
-                android:text="Fog lamps"/>
+                android:text="Fog lamps"
+                android:textColor="@color/colorText"/>
             <ToggleButton
                 android:id="@+id/FogLampsStateToggle"
                 android:layout_width="wrap_content"
@@ -49,7 +56,8 @@
             <TextView
                 android:layout_width="@dimen/desc_item"
                 android:layout_height="match_parent"
-                android:text="Right lamp"/>
+                android:text="Right lamp"
+                android:textColor="@color/colorText"/>
             <ToggleButton
                 android:id="@+id/RightLampStateToggle"
                 android:layout_width="wrap_content"
@@ -65,7 +73,8 @@
             <TextView
                 android:layout_width="@dimen/desc_item"
                 android:layout_height="match_parent"
-                android:text="Left lamp"/>
+                android:text="Left lamp"
+                android:textColor="@color/colorText"/>
             <ToggleButton
                 android:id="@+id/LeftLampStateToggle"
                 android:layout_width="wrap_content"
@@ -81,7 +90,8 @@
             <TextView
                 android:layout_width="@dimen/desc_item"
                 android:layout_height="match_parent"
-                android:text="Stop lamp"/>
+                android:text="Stop lamp"
+                android:textColor="@color/colorText"/>
             <ToggleButton
                 android:id="@+id/StopLampStateToggle"
                 android:layout_width="wrap_content"
@@ -93,4 +103,4 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

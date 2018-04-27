@@ -26,20 +26,33 @@ public class InnerLightFragment extends Fragment {
         inLightBackStateBtn = (ToggleButton) view.findViewById(R.id.inLightBackStateToggle);
         inLightBackStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    showToast("Salon back light is on.");
-                }else{
-                    showToast("Salon back light is off.");
+                try {
+                    if (b) {
+                        showToast("Salon back light is on.");
+                        BluetoothActivity.outputStream.write("S".getBytes());
+
+                    } else {
+                        showToast("Salon back light is off.");
+                        BluetoothActivity.outputStream.write("s".getBytes());
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
                 }
             }
         });
         inLightFrontStateBtn = (ToggleButton) view.findViewById(R.id.inLightFrontStateToggle);
         inLightFrontStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    showToast("Salon front light is on.");
-                }else{
-                    showToast("Salon front light is off.");
+                try {
+                    if (b) {
+                        showToast("Salon front light is on.");
+                        BluetoothActivity.outputStream.write("F".getBytes());
+                    } else {
+                        showToast("Salon front light is off.");
+                        BluetoothActivity.outputStream.write("f".getBytes());
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
                 }
             }
         });
