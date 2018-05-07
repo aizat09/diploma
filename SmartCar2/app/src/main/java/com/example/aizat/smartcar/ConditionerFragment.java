@@ -27,6 +27,7 @@ public class ConditionerFragment extends Fragment {
         View view = inflater.inflate(R.layout.conditioner_fragment,container,false);
         condStateBtn = (ToggleButton) view.findViewById(R.id.condStateToggle);
         condSeekBar = (SeekBar) view.findViewById(R.id.condSeekBar);
+
         condSeekValue = (TextView) view.findViewById(R.id.condSeekValue);
 //        condSeekValue.setText(condSeekBar.getProgress());
         condStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
@@ -45,6 +46,7 @@ public class ConditionerFragment extends Fragment {
                 }
             }
         });
+//        condStateBtn.setOnCheckedChangeListener();
         condSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
             @Override

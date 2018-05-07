@@ -151,6 +151,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 isBtConnected = true;
                 try{
                     BluetoothActivity.outputStream = btSocket.getOutputStream();
+                    new ReceiveThread().run();
                 }catch (Exception e){
                     Toast.makeText(BluetoothActivity.this,"Failed to send",Toast.LENGTH_LONG);
                     e.printStackTrace();

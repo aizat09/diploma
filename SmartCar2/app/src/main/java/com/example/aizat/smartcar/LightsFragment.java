@@ -21,7 +21,7 @@ public class LightsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.lights_fragment,container,false);
-        LightStateBtn = (ToggleButton) view.findViewById(R.id.HeadLampStateToggle);
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.headLampStateToggle);
         LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 try {
@@ -37,7 +37,7 @@ public class LightsFragment extends Fragment {
                 }
             }
         });
-        LightStateBtn = (ToggleButton) view.findViewById(R.id.FogLampsStateToggle);
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.fogLampsStateToggle);
         LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 try {
@@ -53,7 +53,7 @@ public class LightsFragment extends Fragment {
                 }
             }
         });
-        LightStateBtn = (ToggleButton) view.findViewById(R.id.LeftLampStateToggle);
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.leftLampStateToggle);
         LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 try {
@@ -69,7 +69,7 @@ public class LightsFragment extends Fragment {
                 }
             }
         });
-        LightStateBtn = (ToggleButton) view.findViewById(R.id.RightLampStateToggle);
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.rightLampStateToggle);
         LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 try {
@@ -85,16 +85,33 @@ public class LightsFragment extends Fragment {
                 }
             }
         });
-        LightStateBtn = (ToggleButton) view.findViewById(R.id.StopLampStateToggle);
+
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.stopLampStateToggle);
         LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 try {
                     if (b) {
-                        showToast("Stop Lamp is on.");
+                        showToast("Stop Lights are on.");
                         BluetoothActivity.outputStream.write("P".getBytes());
                     } else {
-                        showToast("Stop Lamp is off.");
+                        showToast("Stop Lights are off.");
                         BluetoothActivity.outputStream.write("p".getBytes());
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+        });
+        LightStateBtn = (ToggleButton) view.findViewById(R.id.salonLightToggle);
+        LightStateBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                try {
+                    if (b) {
+                        showToast("Salon Lights are on.");
+                        BluetoothActivity.outputStream.write("S".getBytes());
+                    } else {
+                        showToast("Salon Lights are off.");
+                        BluetoothActivity.outputStream.write("s".getBytes());
                     }
                 }catch (Exception ex){
                     ex.printStackTrace();
